@@ -1,11 +1,4 @@
 <!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
-<<<<<<< HEAD
-<?php
-session_start();
-echo "hola";
-print_r($_SESSION);
-?>
-=======
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,4 +27,3 @@ print_r($_SESSION);
     </div>
 </body>
 </html>
->>>>>>> develop

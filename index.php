@@ -1,10 +1,4 @@
 <!-- TODO Application entry point. Login view -->
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> develop
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,28 +13,6 @@
 </head>
 <body class="text-center" >
 <main class="form-signin w-100 m-auto formBody">
-<<<<<<< HEAD
-  <form method="post" action="./src/library/loginController.php">
-  <img class="mb-4" src="assets/img/programmer.png" alt="" width="70" height="70">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input type="email" name="user" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" value="Login" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
-=======
   <form action="src/library/loginController.php" method="POST" name="submit">
     <img class="mb-4" src="assets/img/programmer.png" alt="" width="70" height="70">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -70,7 +42,6 @@
     <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
 
    
->>>>>>> develop
   </form>
 </main>
 
