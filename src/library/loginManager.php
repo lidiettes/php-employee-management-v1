@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- <?php
 
 $adminUser = "admin@assemblerschool.com";
@@ -18,3 +19,12 @@ if(isset ($_POST["user"]) && isset($_POST ["pwd"])) {
     }
 }
 ?> -->
+=======
+<?php 
+session_start();
+
+session_destroy();
+header('Location: ../../index.php');
+
+?>
+>>>>>>> develop
