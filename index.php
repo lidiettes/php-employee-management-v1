@@ -34,7 +34,9 @@
           echo  "<h4/>Por favor, rellena todos los campos</h4>";
         } 
         if($error == 'incomplete'){  
-          echo  "<h4/>Lo siento, revisa el email o la contraseña</h4>";
+          echo '<div class="alert alert-danger" role="alert">
+          Lo siento, revisa el email o la contraseña
+        </div>';
         } 
       }
     ?>
