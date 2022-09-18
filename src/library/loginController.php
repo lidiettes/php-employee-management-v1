@@ -1,8 +1,12 @@
 <?php
 $error;
+
 if(!empty($_POST['emailUser']) && !empty($_POST['passUser'])){
+    
     $email = $_POST['emailUser'];
     $password = $_POST['passUser'];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $verfi = password_verify($password, $hash);
     if($email == 'lok@lok.com' && $password == '123'){
         $error = 'OK';
         // echo 'Welcome, todo correcto';
