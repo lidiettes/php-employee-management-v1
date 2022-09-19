@@ -25,11 +25,11 @@
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="emailUser" placeholder="name@example.com" name="emailUser" required>
-      <label for="floatingInput">Email address</label>
+      <input type="text" class="form-control" id="userName" name="userName" >
+      <label for="floatingInput">Email or Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="passUser" placeholder="Password" name="passUser" required>
+      <input type="password" class="form-control" id="passUser" name="passUser">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -38,13 +38,15 @@
         $error = $_GET['error'];
         
         if($error == 'nodata'){
-          echo  "<h4/>Por favor, rellena todos los campos</h4>";
+          echo '<div class="alert alert-danger" role="alert">
+          Por favor, rellena todos los campos!
+        </div>';
         } 
         if($error == 'incomplete'){  
           echo '<div class="alert alert-danger" role="alert">
-          Lo siento, revisa el email o la contraseña
+          Error, el email o el username está mal!
         </div>';
-        } 
+      }
       }
     ?>
 

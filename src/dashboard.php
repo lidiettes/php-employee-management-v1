@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <h1 class="title">Welcome Lovelance Contents</h1>
-        <a href="library/loginManager.php">Log Out</a>
+        <a href="../index.php">Log Out</a>
         <hr class="border">
         <div class="content">
             <article>
