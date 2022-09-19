@@ -3,8 +3,14 @@
 <?php 
 session_start();
 
-session_destroy();
-header('Location: ../../index.php');
+accessAdmin($username, $password);
+require_once('loginManager.php');
+    
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// session_destroy();
+// header('Location: ../../index.php');
 
 ?>
->>>>>>> develop
+
