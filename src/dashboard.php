@@ -1,10 +1,8 @@
 <!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
 <?php
 require './library/employeeController.php';
-getUsers();
+$users = getUsers();
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +23,40 @@ getUsers();
         <a href="../index.php">Log Out</a>
         <hr class="border">
         <div class="content">
-            <article>
 
 
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel aut, adipisci delectus a obcaecati aspernatur saepe vitae velit debitis amet reiciendis aperiam nemo, culpa voluptas earum sequi laudantium esse?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel aut, adipisci delectus a obcaecati aspernatur saepe vitae velit debitis amet reiciendis aperiam nemo, culpa voluptas earum sequi laudantium esse?</p>
-            </article>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Postal Code</th>
+                <th>Phone number</th>
+            </tr>
+            </thead>
+            
+        
+            <tbody>
+                <?php foreach ($users as $user): ?>
+                    <tr>
+                        <td> <?php echo $user['name']?> </td>
+                        <td> <?php echo $user['email']?> </td>
+                        <td> <?php echo $user['age']?> </td>
+                        <td> <?php echo $user['streetAddress']?> </td>
+                        <td> <?php echo $user['city']?> </td>
+                        <td> <?php echo $user['state']?> </td>
+                        <td> <?php echo $user['postalCode']?> </td>
+                        <td> <?php echo $user['phoneNumber']?> </td>
+                    </tr>
+                <?php endforeach;; ?>
+            </tbody>
+        </table>
+
         </div>
     </div>
 </body>
