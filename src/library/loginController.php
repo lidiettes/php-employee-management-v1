@@ -1,38 +1,13 @@
 <?php
-// session_start();
-$error;
-$filePath = "../../resources/users.json";
-$jsonData = file_get_contents($filePath);
-$usersJson = json_decode($jsonData, true);
+require_once('loginManager.php');
 
-// $email = $usersJson["users"][0]['email'];
-// $password = $usersJson["users"][0]['password'];
+// Lo que introduce el user
+$userName = $_POST['userName'];
+$userPass = $_POST['passUser'];
 
-// foreach($usersJson['users'] as $user){
-// $output = $user['email'];
-// $output = $user['password'];
-// }
-// echo $output = $user['email'];
-// echo $output = $user['password'];
+// Send parametros del user que tendrá que coincider con el users.json
+loginAdmin($userName,$userPass);
 
-
-if($_POST['emailUser'] === "" || $_POST['passUser'] === ""){
-    $error = 'nodata';
-    header("Location: ../../index.php?error=$error");
-    exit();
-    
-}else{
-    foreach($usersJson['users'] as $user){
-        if($_POST['emailUser'] === $user['email'] && $_POST['passUser'] === $user['password']){
-         $error = 'OK'; 
-        header("Location: ../dashboard.php");
-    } else{
-        $error = 'incomplete';
-        header("Location: ../../index.php?error=$error");
-        exit();
-    }
-    }
-}
 
 ?>
 
