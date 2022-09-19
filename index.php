@@ -1,4 +1,8 @@
 <!-- TODO Application entry point. Login view -->
+<?php
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +35,7 @@
     <?php
       if(isset($_GET['error'])){
         $error = $_GET['error'];
+        
         if($error == 'nodata'){
           echo  "<h4/>Por favor, rellena todos los campos</h4>";
         } 
@@ -43,6 +48,7 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log In</button>
     <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
 
+    
    
   </form>
 </main>

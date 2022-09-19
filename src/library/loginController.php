@@ -1,29 +1,38 @@
 <?php
+// session_start();
 $error;
+$filePath = "../../resources/users.json";
+$jsonData = file_get_contents($filePath);
+$usersJson = json_decode($jsonData, true);
 
-if(!empty($_POST['emailUser']) && !empty($_POST['passUser'])){
+// $email = $usersJson["users"][0]['email'];
+// $password = $usersJson["users"][0]['password'];
+
+// foreach($usersJson['users'] as $user){
+// $output = $user['email'];
+// $output = $user['password'];
+// }
+// echo $output = $user['email'];
+// echo $output = $user['password'];
+
+
+if($_POST['emailUser'] == "" || $_POST['passUser'] == ""){
+    $error = 'nodata';
+    header("Location: ../../index.php?error=$error");
+    exit();
     
-    $email = $_POST['emailUser'];
-    $password = $_POST['passUser'];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    $verfi = password_verify($password, $hash);
-    if($email == 'lok@lok.com' && $password == '123'){
-        $error = 'OK';
-        // echo 'Welcome, todo correcto';
+}else{
+    foreach($usersJson['users'] as $user){
+        if($_POST['emailUser'] == $user['email'] && $_POST['passUser'] == $user['password']){
+         $error = 'OK'; 
         header("Location: ../dashboard.php");
     } else{
-        // echo 'Lo siento, revisa el emial o contraseña';
-        // $error = 'Lo siento, revisa el emial o contraseña';
         $error = 'incomplete';
         header("Location: ../../index.php?error=$error");
         exit();
     }
-} else{
-    // echo 'Por favor, rellena todos los campos';
-    // $error = 'Por favor, rellena todos los campos';
-    $error = 'nodata';
-    header("Location: ../../index.php?error=$error");
-     exit();
+    }
 }
+
 ?>
 
