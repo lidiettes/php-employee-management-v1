@@ -36,7 +36,6 @@ function loginAdmin($postUser, $postPass) {
                     }
                 } else {
                     $error = 'incomplete';
-                 
                         header("Location: ../../index.php?error=$error");
                         exit();
                 }

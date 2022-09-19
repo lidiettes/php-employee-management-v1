@@ -1,4 +1,10 @@
 <!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
+<?php
+require './library/employeeController.php';
+getUsers();
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 
 </head>
 <body>
@@ -20,6 +26,9 @@
         <hr class="border">
         <div class="content">
             <article>
+
+
+
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel aut, adipisci delectus a obcaecati aspernatur saepe vitae velit debitis amet reiciendis aperiam nemo, culpa voluptas earum sequi laudantium esse?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel aut, adipisci delectus a obcaecati aspernatur saepe vitae velit debitis amet reiciendis aperiam nemo, culpa voluptas earum sequi laudantium esse?</p>
             </article>
