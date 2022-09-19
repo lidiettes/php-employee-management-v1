@@ -16,14 +16,14 @@ $usersJson = json_decode($jsonData, true);
 // echo $output = $user['password'];
 
 
-if($_POST['emailUser'] == "" || $_POST['passUser'] == ""){
+if($_POST['emailUser'] === "" || $_POST['passUser'] === ""){
     $error = 'nodata';
     header("Location: ../../index.php?error=$error");
     exit();
     
 }else{
     foreach($usersJson['users'] as $user){
-        if($_POST['emailUser'] == $user['email'] && $_POST['passUser'] == $user['password']){
+        if($_POST['emailUser'] === $user['email'] && $_POST['passUser'] === $user['password']){
          $error = 'OK'; 
         header("Location: ../dashboard.php");
     } else{
