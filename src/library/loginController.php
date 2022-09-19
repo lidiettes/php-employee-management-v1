@@ -1,51 +1,38 @@
 <?php
-// $error;
-// if(!empty($_POST['emailUser']) && !empty($_POST['passUser'])){
-//     $email = $_POST['emailUser'];
-//     $password = $_POST['passUser'];
-//     if($email == 'lok@lok.com' && $password == '123'){
-//         $error = 'OK';
+// session_start();
+$error;
+$filePath = "../../resources/users.json";
+$jsonData = file_get_contents($filePath);
+$usersJson = json_decode($jsonData, true);
 
-//         header("Location: ../dashboard.php");
-//     } else{
-//         $error = 'incomplete';
-//         header("Location: ../../index.php?error=$error");
-//         exit();
-//     }
-// } else{
-//     $error = 'nodata';
-//     header("Location: ../../index.php?error=$error");
-//     exit();
+// $email = $usersJson["users"][0]['email'];
+// $password = $usersJson["users"][0]['password'];
+
+// foreach($usersJson['users'] as $user){
+// $output = $user['email'];
+// $output = $user['password'];
 // }
-
-$usersJson = file_get_contents('../../resources/users.json');
-$decodedJson = json_decode($usersJson, true)['users'];
-
-// $emailJson =  $decodedJson[2]->email;
-// $passwordJson =  $decodedJson[3]->password;
-
-if ($name = '' || $password = '' ){
-echo 'no funchona';
-} else {
-    foreach ($decodedJson as admin? ){
-            if (password_verify($password, $admin['password'])){
- 
-
-   
+// echo $output = $user['email'];
+// echo $output = $user['password'];
 
 
-// echo $decodedJson->email;
-
-// echo $decodedJson['email'];
-// echo $decodedJson['password'];
-
-
-// $hash = '$2y$10$nuh1LEwFt7Q2/wz9/CmTJO91stTBS4cRjiJYBY3sVCARnllI.wzBC';
-// if (password_verify('admin@assemblerschool.com', $hash )){
-//     echo 'Password is valid!';
-// } else {
-//     echo 'Invalid password.';
-// }
+if($_POST['emailUser'] == "" || $_POST['passUser'] == ""){
+    $error = 'nodata';
+    header("Location: ../../index.php?error=$error");
+    exit();
+    
+}else{
+    foreach($usersJson['users'] as $user){
+        if($_POST['emailUser'] == $user['email'] && $_POST['passUser'] == $user['password']){
+        $error = 'OK'; 
+        header("Location: ../dashboard.php");
+    } else{
+        $error = 'incomplete';
+        header("Location: ../../index.php?error=$error");
+        exit();
+    }
+    }
+}
 
 ?>
 
