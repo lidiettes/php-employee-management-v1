@@ -57,9 +57,9 @@ $users = getUsers();
                         <td> <?php echo $user['postalCode']?> </td>
                         <td> <?php echo $user['phoneNumber']?> </td>
                         <td>
-                            <a href="" class="btn btn-outline-info">View</a>
-                            <a href="" class="btn btn-outline-secondary">Update</a>
-                            <a href="" class="btn btn-outline-danger">Delete</a>
+                            <a href="employee.php?id=<?php echo $user['id'] ?>" class="btn btn-sm btn-outline-info">View</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary">Update</a>
+                            <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
 
 
