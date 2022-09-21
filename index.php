@@ -1,5 +1,11 @@
 <!-- TODO Application entry point. Login view -->
+<<<<<<< HEAD
 
+=======
+<?php
+
+?>
+>>>>>>> lidia
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/login.css">
+    <script src="assets/js/index.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js" integrity="sha512-blBYtuTn9yEyWYuKLh8Faml5tT/5YPG0ir9XEABu5YCj7VGr2nb21WPFT9pnP4fcC3y0sSxJR1JqFTfTALGuPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -44,12 +51,12 @@
       }
       }
     ?>
- 
+
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log In</button>
     <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
 
     
-   
+
   </form>
 </main>
 

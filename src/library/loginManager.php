@@ -1,3 +1,5 @@
+
+
 <?php 
 $error;
 // He renombrado las variables del parámetro para poder chekear las condiciones
@@ -25,7 +27,7 @@ function loginAdmin($postUser, $postPass) {
                         $userID = $json['userId'];
                         $_SESSION['user'] = $userID;
 
-                        header("Location: ../dashboard.php");
+                        header("Location: ../dashboard2.php");
                     } else {
                         $error = 'incomplete';
 
@@ -34,7 +36,6 @@ function loginAdmin($postUser, $postPass) {
                     }
                 } else {
                     $error = 'incomplete';
-                 
                         header("Location: ../../index.php?error=$error");
                         exit();
                 }
