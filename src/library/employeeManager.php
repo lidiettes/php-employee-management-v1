@@ -48,8 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'postalCode' => $_POST['postalCode'],
             'phoneNumber' => $_POST['phoneNumber'],
         );        
-        return json_encode($datae);       
-
+        return json_encode($datae);  
         
     }      
     $name = "../../resources/employees";
