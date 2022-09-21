@@ -11,8 +11,6 @@ function loginAdmin($postUser, $postPass) {
             $error = 'nodata';
 
             header("Location: ../../index.php?error=$error");
-            exit();      
-
         } else {
             foreach ($jsonData as $json) {
                 // El User debería acceder con el email y el username(doble statement)
@@ -30,13 +28,12 @@ function loginAdmin($postUser, $postPass) {
                         $error = 'incomplete';
 
                         header("Location: ../../index.php?error=$error");
-                        exit();
                     }
                 } else {
                     $error = 'incomplete';
                  
                         header("Location: ../../index.php?error=$error");
-                        exit();
+
                 }
             }
     }

@@ -1,9 +1,4 @@
 <!-- TODO Application entry point. Login view -->
-<?php
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +27,7 @@
       <label for="floatingPassword">Password</label>
     </div>
 
+    <!-- This chunk of code is for Alert message in Index.php (login error message) -->
     <?php
       if(isset($_GET['error'])){
         $error = $_GET['error'];
@@ -50,10 +46,7 @@
     ?>
  
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log In</button>
-    <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
 
-    
-   
   </form>
 </main>
 
