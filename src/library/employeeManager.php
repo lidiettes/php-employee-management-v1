@@ -24,9 +24,10 @@ function updateEmployee(array $updateEmployee)
 }
 
 
-function getEmployee(string $id)
+function getEmployees()
 {
-// TODO implement it
+    return json_decode(file_get_contents('../resources/employees.json'), true);
+    
 }
 
 
@@ -41,7 +42,19 @@ function getQueryStringParameters(): array
 // TODO implement it
 }
 
-function getNextIdentifier(array $employeesCollection): int
+function getNextIdentifier($id): int
 {
-// TODO implement it
+    
+}
+//array $employeesCollection
+
+function getUserById($id)
+{
+    $users = getEmployees();
+    foreach ($users as $user) {
+        if ($user['id'] == $id) {
+            return $user;
+        }
+    }
+    return null;
 }
