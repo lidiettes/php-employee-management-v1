@@ -15,7 +15,7 @@
 // }
 
 function printEmployees(){
-    $employees = json_decode(file_get_contents('./../resources/employees.json'), true);        
+    $employees = json_decode(file_get_contents('../../resources/employees.json'), true);        
         echo json_encode($employees);
 }
 
@@ -32,10 +32,41 @@ function printEmployees(){
 
 //  -------xxx-------
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {          
+    function get_data() {
+        $datae = array();
+        $datae[] = array(
+            
+            'name' => $_POST['name'],
+            'lastName' => $_POST['lastName'],
+            'email' => $_POST['email'],
+            'gender' => $_POST['gender'],
+            'city' => $_POST['city'],
+            'streetAddress' => $_POST['streetAddress'],
+            'state' => $_POST['state'],
+            'age' => $_POST['age'],
+            'postalCode' => $_POST['postalCode'],
+            'phoneNumber' => $_POST['phoneNumber'],
+        );        
+        return json_encode($datae);       
 
-function addEmployee(array $newEmployee)
+        
+    }      
+    $name = "../../resources/employees";
+    $file_name = $name . '.json';   
+    if(file_put_contents(
+        "$file_name", get_data(), FILE_APPEND)) {
+            echo $file_name .' file created';
+        }
+    else {
+        echo 'There is some error';
+    }
+}
+
+
+function addEmployee(array $employees)
 {
-// TODO implement it
+    /* $employees = json_decode(file_get_contents('../resources/employees.json'), true); */
 }
 
 
