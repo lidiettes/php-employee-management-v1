@@ -1,4 +1,15 @@
 <?php
-require 'employeeManager.php';
-getUsers();
+
+session_start();
+
+require ('employeeManager.php');
+
+// getUsers();
+
+printEmployees();
+
+
+
+
+
 ?>

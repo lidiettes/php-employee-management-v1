@@ -2,30 +2,35 @@
 /**
  * EMPLOYEE FUNCTIONS LIBRARY
  *
- * @author: Jose Manuel Orts
+//  * @author: Jose Manuel Orts
  * @date: 11/06/2020
  */
 
-function getUsers(){
-    return json_decode(file_get_contents('./../resources/employees.json'),true);
-    // echo '<pre>';
-    // var_dump($users);
-    // echo '</pre>';
-    // exit;
+// function getUsers(){
+//     return json_decode(file_get_contents('./../resources/employees.json'),true);
+//     // echo '<pre>';
+//     // var_dump($users);
+//     // echo '</pre>';
+//     // exit;
+// }
+
+function printEmployees(){
+    $employees = json_decode(file_get_contents('./../resources/employees.json'), true);        
+        echo json_encode($employees);
 }
 
-function getUserById($id){
-    $users = getUsers();
-    foreach ($users as $user){
-        if ($user['id']== $id){
-            return $user;
-        }
-    }
 
-}
-return null;
+// function getUserById($id){
+//     $users = getUsers();
+//     foreach ($users as $user){
+//         if ($user['id']== $id){
+//             return $user;
+//         }
+//     }
+// }
+// return null;
 
-// ! -------xxx-------
+//  -------xxx-------
 
 
 function addEmployee(array $newEmployee)

@@ -33,6 +33,8 @@ $user = getUserById($userId);
     <div class= "card-header" >
         <h3>View User </h3>
     </div>
+
+    <form class="row g-3" action="library\employeeController.php" method="post">
         <table class= "table">
             <tbody>
                 <tr>
@@ -78,7 +80,21 @@ $user = getUserById($userId);
             </tbody>
 
         </table>
+
+</form>
+
+
+
 </div>
+
+
+
+<div class="col-12">
+      <button type="submit" class="btn btn-primary">Edit</button>
+      <button type="submit" class="btn btn-primary">Return</button>
+    </div>
 </div>
 </body>
+
+
 </html>
