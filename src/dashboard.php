@@ -2,7 +2,7 @@
 <?php
 
 require ('./library/employeeController.php');
-// require ('./library/employeeManager.php');
+
 
 ?>
 
@@ -42,6 +42,9 @@ require ('./library/employeeController.php');
             flex: 3;
         }
     </style>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js" integrity="sha512-blBYtuTn9yEyWYuKLh8Faml5tT/5YPG0ir9XEABu5YCj7VGr2nb21WPFT9pnP4fcC3y0sSxJR1JqFTfTALGuPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="../assets/js/index.js" defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -136,6 +139,29 @@ require ('./library/employeeController.php');
                         <!-- AddEventlister a tbody para insertar [tr] -->
 
                     </tbody>
+        <a href="../index.php" class="btn btn-sm btn btn-danger">Log Out</a>
+        <a href="" class="btn btn-sm btn btn-success">Create</a>
+        <hr class="border">
+            <div class="content">
+
+                <table class="table mt-5">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>street</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Postal Code</th>
+                        <th>Phone number</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                    </thead>
+            
+        
+                    <tbody id="tbody"></tbody>
                 </table>
 
             </div>
