@@ -4,23 +4,17 @@ session_start();
 
 require ('employeeManager.php');
 
-// getUsers();
 
 
-
-
-if(isset($_GET["action"])&& $_GET["action"]=="list"){
-    echo printEmployees();
-    };
+if(isset($_GET['action']) && $_GET['action'] === 'list' ){
+    printEmployees();
     
-    if(isset($_GET["action"])&&$_GET["action"]=="addEmployee"){
     
-        $employees = file_get_contents('../resources/employees.json');
-    
-        echo $employees;
-        };
+} else if  (isset($_GET['action']) && $_GET['action'] === 'delete' ){
+    $employeeId = $_GET['id'];
+    deleteEmployee($employeeId);
 
-
+}   
 
 
 ?>

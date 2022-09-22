@@ -6,44 +6,30 @@
  * @date: 11/06/2020
  */
 
-// function getUsers(){
-//     return json_decode(file_get_contents('./../resources/employees.json'),true);
-//     // echo '<pre>';
-//     // var_dump($users);
-//     // echo '</pre>';
-//     // exit;
-// }
-
 function printEmployees(){
-    $employees = json_decode(file_get_contents('./../resources/employees.json'), true);        
+    $employees = json_decode(file_get_contents('../../resources/employees.json'), true);        
         echo json_encode($employees);
 }
 
 
-// function getUserById($id){
-//     $users = getUsers();
-//     foreach ($users as $user){
-//         if ($user['id']== $id){
-//             return $user;
-//         }
-//     }
-// }
-// return null;
+function deleteEmployee(string $id){
+    $employees = json_decode(file_get_contents('../../resources/employees.json'), true); 
+    for ($i = 0 ; $i < count($employees); $i++ ){
+        
+        if (($employees[$i]['id']) === $id){
+            unset($employees[$i]);
+        }
+    }
 
-//  -------xxx-------
 
+    file_put_contents('../../resources/employees.json', json_encode($employees));
+
+}
 
 function addEmployee(array $newEmployee)
 {
 // TODO implement it
 }
-
-
-function deleteEmployee(string $id)
-{
-// TODO implement it
-}
-
 
 function updateEmployee(array $updateEmployee)
 {
