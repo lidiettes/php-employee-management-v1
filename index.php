@@ -1,7 +1,4 @@
 <!-- TODO Application entry point. Login view -->
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js" integrity="sha512-blBYtuTn9yEyWYuKLh8Faml5tT/5YPG0ir9XEABu5YCj7VGr2nb21WPFT9pnP4fcC3y0sSxJR1JqFTfTALGuPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/index.js"></script>
 </head>
+
 <body class="text-center" >
 <main class="form-signin w-100 m-auto formBody">
   <form action="src/library/loginController.php" method="POST" id="formLogin">
@@ -31,6 +29,7 @@
       <label for="floatingPassword">Password</label>
     </div>
 
+    <!-- Print Error message -->
     <?php
       if(isset($_GET['error'])){
         $error = $_GET['error'];
@@ -50,8 +49,6 @@
 
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log In</button>
     <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
-
-    
 
   </form>
 </main>

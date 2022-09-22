@@ -1,25 +1,24 @@
 <?php
-
 session_start();
-
 require ('employeeManager.php');
 
-// getUsers();
-
-
-
-
-if(isset($_GET["action"])&& $_GET["action"]=="list"){
-    echo printEmployees();
+// ------------------------------------------------------------------------------------------------ //
+if(isset($_GET["action"]) && $_GET["action"] === "listEmployees"){
+    echo getEmployeesData();
     };
     
-    if(isset($_GET["action"])&&$_GET["action"]=="addEmployee"){
-    
-        $employees = file_get_contents('../resources/employees.json');
-    
-        echo $employees;
-        };
 
+// ------------------------------------------------------------------------------------------------ //
+// if(isset($_GET["action"]) && $_GET["action"] === "addEmployee"){    
+//     echo addEmployee($newEmployee);
+//     };
+
+    if(isset($_GET["action"]) && $_GET["action"] === "newEmploy"){
+        $datox = $_GET(["action"] === "newEmploy");
+        return addEmployee($datox);
+        
+     
+    }
 
 
 

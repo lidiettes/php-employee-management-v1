@@ -1,7 +1,6 @@
-
-
 <?php 
 $error;
+
 // He renombrado las variables del parámetro para poder chekear las condiciones
 function loginAdmin($postUser, $postPass) {
         session_start();
@@ -25,8 +24,9 @@ function loginAdmin($postUser, $postPass) {
 
                         // Session Id para comprobar si la session está seteada(iniciada) o no
                         $userID = $json['userId'];
-                        $_SESSION['user'] = $userID;
 
+                        $_SESSION['user'] = $userID;
+            
                         header("Location: ../dashboard.php");
                     } else {
                         $error = 'incomplete';
