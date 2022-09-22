@@ -1,23 +1,22 @@
-<!-- TODO Employee view -->
-
 <?php
 require 'library/employeeManager.php';
 
-if (!isset($_GET['id'])){
+
+
+
+if (!isset($_POST['id'])){
     echo "Not found";
     exit;
 }
 
-$userId = $_GET['id'];
+$userId = $_POST['id'];
+deleteUser($userId);
 
 
-$user = getUserById($userId);
-if (!$user){
-    echo "Not found";
-    exit; 
-}
+
+
+header("Location:./dashboard.php");
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +40,10 @@ if (!$user){
         </div>
         <div class="card-body">
             <a class="btn btn-secondary" href="update.php?v=view&id=<?= $user["id"]?>">Update</a>
+            <form style ="display:inline-block" method="POST" action="delete.php">
+                <input type="hidden" name="id" value="<?php echo $user["id"]?>">
+            <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </form>
             <a class="btn btn-danger" href="delete.php?v=view&id=<?= $user["id"]?>">Delete</a>
         </div>
 <table class="table">
