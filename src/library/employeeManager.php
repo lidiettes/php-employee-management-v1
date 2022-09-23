@@ -1,13 +1,5 @@
 <?php
 
-
-/**
- * EMPLOYEE FUNCTIONS LIBRARY
- *
-//  * @author: Jose Manuel Orts
- * @date: 11/06/2020
- */
-
 function printEmployees(){
     $employees = json_decode(file_get_contents('../../resources/employees.json'), true);        
         echo json_encode($employees);
