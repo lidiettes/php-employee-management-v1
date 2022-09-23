@@ -18,23 +18,16 @@ function printEmployees(){
 function deleteEmployee(string $id){
         
     
-        foreach ($employees as $i => $employee){
-            if ($employee['id'] == $id){
-                array_splice($employees, $i, 1);
+        // foreach ($employees as $i => $employee){
+        //     if ($employee['id'] == $id){
+        //         array_splice($employees, $i, 1);
             
-            }
-        }
+        //     }
+        // }
     
-        file_put_contents('../../resources/employees.json', json_encode($employees));
+        // file_put_contents('../../resources/employees.json', json_encode($employees));
         // file_put_contents('../../resources/employees.json', json_encode($users, JSON_PRETTY_PRINT));
     }
-
-
-
-
-
-
-
 
 
 

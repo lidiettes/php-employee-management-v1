@@ -26,6 +26,7 @@ function dashboardPrint() {
       }
     });
 }
+
 // --------------------------------------------
 
 formData.addEventListener("submit", () => {
