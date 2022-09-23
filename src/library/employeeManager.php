@@ -1,13 +1,6 @@
 <?php
 
 
-
-// ----------------------------------------------------------------------------- //
-
-function addEmployee(array $datox) {
-	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
-	$newArray = array();
-	$id = array();
 /**
  * EMPLOYEE FUNCTIONS LIBRARY
  *
@@ -21,21 +14,35 @@ function printEmployees(){
 }
 
 
+
 function deleteEmployee(string $id){
-    $employees = json_decode(file_get_contents('../../resources/employees.json'), true); 
-    for ($i = 0 ; $i < count($employees); $i++ ){
         
-        if (($employees[$i]['id']) === $id){
-            unset($employees[$i]);
+    
+        foreach ($employees as $i => $employee){
+            if ($employee['id'] == $id){
+                array_splice($employees, $i, 1);
+            
+            }
         }
+    
+        file_put_contents('../../resources/employees.json', json_encode($employees));
+        // file_put_contents('../../resources/employees.json', json_encode($users, JSON_PRETTY_PRINT));
     }
 
 
-    file_put_contents('../../resources/employees.json', json_encode($employees));
 
-}
 
-	foreach($employeeArray as $employee) {
+
+
+
+
+
+
+function addEmployee(array $datox) {
+	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
+	$newArray = array();
+	$id = array();
+    foreach($employeeArray as $employee) {
         // ID vacío para alm,acenar los ids del json
 		$id[] = $employee["id"];
 	}
