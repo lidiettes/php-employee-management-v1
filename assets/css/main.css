@@ -1,0 +1,22 @@
+.modal-content h5{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.modal-body{
+    padding: 0 40px 40px 40px;
+}
+.form-control{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 10px;
+}
+label{
+    /* margin-right: 2%; */
+    flex: 1;
+    font-weight: bold;
+}
+input{
+    flex: 3;
+}

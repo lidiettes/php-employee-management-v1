@@ -14,18 +14,18 @@ function printEmployees(){
 
 function deleteEmployee(string $id){
         $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
-        foreach ($employees as $i => $employee){
-            if ($employee['id'] == $id){
-                array_splice($employees, $i, 1);
+        for ($i = 0; $i < count($employees); $i++){
+            if ($employees[$i]['id'] == $id){
+            array_splice($employees, $i , 1);
             
             }
         }
-    
         file_put_contents('../../resources/employees.json', json_encode($employees));
         echo json_encode($employees);
+}
 
-    }
 
+ //         echo "<pre>";print_r($employees);echo "</pre>";
 
 // function addEmployee(array $datox) {
 // 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
