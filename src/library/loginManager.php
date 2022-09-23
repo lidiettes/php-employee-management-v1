@@ -27,7 +27,7 @@ function loginAdmin($postUser, $postPass) {
                         $userID = $json['userId'];
                         $_SESSION['user'] = $userID;
 
-                        header("Location: ../dashboard2.php");
+                        header("Location: ../dashboard.php");
                     } else {
                         $error = 'incomplete';
 
