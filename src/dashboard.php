@@ -1,9 +1,6 @@
 <!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
 <?php
-
 require ('./library/employeeController.php');
-
-
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +111,7 @@ require ('./library/employeeController.php');
             
 
             </div>
-          </div>
+        </div>
         </div>
 
         <hr class="border">
@@ -131,38 +128,15 @@ require ('./library/employeeController.php');
                         <th>State</th>
                         <th>Postal Code</th>
                         <th>Phone number</th>
-                        <th>Open</th>
-                        <th>Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tbody">
-                        <!-- AddEventlister a tbody para insertar [tr] -->
-
-                    </tbody>
-        <a href="../index.php" class="btn btn-sm btn btn-danger">Log Out</a>
-        <a href="" class="btn btn-sm btn btn-success">Create</a>
-        <hr class="border">
-            <div class="content">
-
-                <table class="table mt-5">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Age</th>
-                        <th>street</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Postal Code</th>
-                        <th>Phone number</th>
                         <th>Delete</th>
                         <th>Update</th>
                     </tr>
                     </thead>
-            
-        
                     <tbody id="tbody"></tbody>
-                </table>
+        <!-- <a href="../index.php" class="btn btn-sm btn btn-danger">Log Out</a>
+        <a href="" class="btn btn-sm btn btn-success">Create</a> -->
+        
+            </table>
 
             </div>
     </div>
