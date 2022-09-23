@@ -1,18 +1,5 @@
 <?php
-/**
- * EMPLOYEE FUNCTIONS LIBRARY
- *
-//  * @author: Jose Manuel Orts
- * @date: 11/06/2020
- */
 
-// function getUsers(){
-//     return json_decode(file_get_contents('./../resources/employees.json'),true);
-//     // echo '<pre>';
-//     // var_dump($users);
-//     // echo '</pre>';
-//     // exit;
-// }
 
 function printEmployees(){
     $employees = json_decode(file_get_contents('../../resources/employees.json'), true);        
@@ -20,22 +7,12 @@ function printEmployees(){
 }
 
 
-// function getUserById($id){
-//     $users = getUsers();
-//     foreach ($users as $user){
-//         if ($user['id']== $id){
-//             return $user;
-//         }
-//     }
-// }
-// return null;
 
-//  -------xxx-------
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {          
+/* if ($_SERVER['REQUEST_METHOD'] == 'POST') {          
     function get_data() {
-        $datae = array();
-        $datae[] = array(
+        $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
+        json_encode($employees);
+         $employees[] = array(
             
             'name' => $_POST['name'],
             'lastName' => $_POST['lastName'],
@@ -48,19 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'postalCode' => $_POST['postalCode'],
             'phoneNumber' => $_POST['phoneNumber'],
         );        
-        return json_encode($datae);  
+        return json_encode($employees);  
         
     }      
     $name = "../../resources/employees";
     $file_name = $name . '.json';   
+
     if(file_put_contents(
-        "$file_name", get_data(), FILE_APPEND)) {
+        "$file_name", get_data())) {63
             echo $file_name .' file created';
         }
     else {
         echo 'There is some error';
     }
-}
+ }*/
 
 
 function addEmployee(array $employees)
@@ -83,7 +61,7 @@ function updateEmployee(array $updateEmployee)
 
 function getEmployees()
 {
-    return json_decode(file_get_contents('../resources/employees.json'), true);
+    
     
 }
 

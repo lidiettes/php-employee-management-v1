@@ -1,12 +1,3 @@
-// function addEmoployee(){
-//     fetch("library/dataController.php?action=addEmployee", { method: "GET" })
-//         .then(response => response.json())
-//         .then(data => {
-//             // console.log(data)
-//             // console.log(data[0]["name"])
-//             renderAllEmployees(data);
-//         });
-//     }
 
 const tbody = document.getElementById('tbody');
 
@@ -23,7 +14,7 @@ function dashboardPrint(){
             for(let i = data.length - 1; i >= 0; i--) {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
-                <td>${data[i].name}</td>
+                <td>${data[i].name} </td>
                 <td>${data[i].email}</td>
                 <td>${data[i].age}</td>
                 <td>${data[i].streetAddress}</td>
@@ -43,12 +34,12 @@ function dashboardPrint(){
                 tbody.appendChild(tr);
             }
     })
-}
+};
+
+
 
 /* var createBtn = document.getElementById('createBtn');
 createBtn.addEventListener("click", addEmoployeeForm()); */
-
-
 
 
 /* function addEmoployee() {
@@ -59,4 +50,4 @@ createBtn.addEventListener("click", addEmoployeeForm()); */
         // console.log(data[0]["name"])
         renderAllEmployees(data);
       });
-  } */ 
+  }  */

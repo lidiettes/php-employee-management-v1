@@ -1,11 +1,11 @@
 <!-- TODO Application entry point. Login view -->
-<<<<<<< HEAD
 
-=======
+
+
 <?php
 
 ?>
->>>>>>> lidia
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

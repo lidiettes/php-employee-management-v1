@@ -1,12 +1,4 @@
 <?php
-<<<<<<< HEAD
-require 'employeeManager.php';
-require '../resources/employees.json';
-
-getEmployees();
-getUserById($user);
-=======
-
 session_start();
 
 require ('employeeManager.php');
@@ -16,19 +8,20 @@ require ('employeeManager.php');
 
 
 
-if(isset($_GET["action"]) && $_GET["action"]=="list"){
+if(isset($_GET["action"])&& $_GET["action"]=="list"){
     echo printEmployees();
     };
     
-    if(isset($_GET["action"]) && $_GET["action"]=="addEmployee"){
+       if(isset($_POST["action"]) && $_POST["action"]=="addEmployee"){
     
         $employees = file_get_contents('../resources/employees.json');
     
         echo $employees;
         };
 
+ 
 
 
 
->>>>>>> lidia
+
 ?>
