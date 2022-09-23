@@ -18,7 +18,6 @@ function dashboardPrint() {
                 <td>${value.state}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-
                 <td><a href="#" class="btn btn-success">Update</a></td>
                 <td><a href="#" class="btn btn-danger">Delete</a></td>
                 `;
@@ -52,7 +51,6 @@ formData.addEventListener("submit", () => {
                 <td>${datos[i].state}</td>
                 <td>${datos[i].postalCode}</td>
                 <td>${datos[i].phoneNumber}</td>
-
                 <td><a href="#" class="btn btn-success">Update</a></td>
                 <td><a href="#" class="btn btn-danger">Delete</a></td>
                 `;
@@ -106,10 +104,12 @@ function deleteEmployee(idNum) {
                 <td>${data[i].postalCode}</td>
                 <td>${data[i].phoneNumber}</td>
                 <td><a class="btn btn-sm btn btn-success" onclick="deleteEmployee(${data[i].id})">Delete</a></td>
-                <td><a href="" class="btn btn-sm btn btn-success">Update</a></td>
+                <td><a href="" class="btn btn-sm btn btn-success"onclick="Employee(${data[i].id})>Update</a></td>
+                <a href="update.php?v=view&id=<?= $user["id"]?>" class="btn btn-outline-secondary"><i class="fas fa-user-edit"></i></a>
                 `;
           tbody.appendChild(tr);
         }
       });
     });
 }
+

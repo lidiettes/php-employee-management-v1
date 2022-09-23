@@ -63,6 +63,20 @@ function getEmployeesData() {
 function updateEmployee(array $updateEmployee)
 {
 // TODO implement it
+function updateUser($data, $id){
+     
+    $updateEmployee = [];
+    $employees = getEmployees();
+    foreach ($employees as $i => $employee){
+        if ($employee['id'] == $id){
+            $employee[$i] = $updateEmployee = array_merge($employee, $data);
+        }
+    }
+
+    file_put_contents('../resources/employees.json', json_encode($employees, JSON_PRETTY_PRINT));
+   
+    return $updateEmployee;
+}
 }
 
 
