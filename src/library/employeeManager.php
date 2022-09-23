@@ -24,8 +24,6 @@ function updateUser($data, $id){
     foreach ($users as $i => $user){
         if ($user['id'] == $id){
             $users[$i] = $updateUser = array_merge($user, $data);
-            
-
         }
     }
 
