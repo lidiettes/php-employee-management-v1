@@ -1,10 +1,10 @@
 <?php
 
-function printEmployees(){
-    $employees = json_decode(file_get_contents('../../resources/employees.json'), true);        
-        echo json_encode($employees);
+// EXTRAE LOS DATOS DE JSON
+function getEmployeesData() {
+	return file_get_contents("../../resources/employees.json");
+	
 }
-
 
 
 function deleteEmployee(string $id){
@@ -23,12 +23,13 @@ function deleteEmployee(string $id){
 
 
 
-function addEmployee(array $datox) {
+function addEmployee(array $newEmployee) {
 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
 	$newArray = array();
 	$id = array();
+	
     foreach($employeeArray as $employee) {
-        // ID vacío para alm,acenar los ids del json
+        // ID vacío para almacenar los ids del json
 		$id[] = $employee["id"];
 	}
     echo $id;
@@ -36,15 +37,15 @@ function addEmployee(array $datox) {
     // El valor máximo id + 1(para incrementarlo)
 	$newId = max($id) + 1;
 	$newArray = array(
-		"id" => $datox[$newId],
-		"name" => $datox["name"],
-		"email" => $datox["email"],
-		"age" => $datox["age"],
-		"streetAddress" => $datox["streetAddress"],
-		"city" => $datox["city"],
-		"state" => $datox["state"],
-		"postalCode" => $datox["postalCode"],
-		"phoneNumber" => $datox["phoneNumber"],
+		"id" => $newId,
+		"name" => $newEmployee["name"],
+		"email" => $newEmployee["email"],
+		"age" => $newEmployee["age"],
+		"streetAddress" => $newEmployee["streetAddress"],
+		"city" => $newEmployee["city"],
+		"state" => $newEmployee["state"],
+		"postalCode" => $newEmployee["postalCode"],
+		"phoneNumber" => $newEmployee["phoneNumber"],
 	);
 
 	array_push($employeeArray, $newArray);
@@ -54,11 +55,7 @@ function addEmployee(array $datox) {
 }
 
 
-// EXTRAE LOS DATOS DE JSON
-function getEmployeesData() {
-	return file_get_contents("../../resources/employees.json");
-	
-}
+
 
 function updateEmployee(array $updateEmployee)
 {

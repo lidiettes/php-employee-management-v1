@@ -64,7 +64,7 @@ require ('./library/employeeController.php');
                             <h5 class="modal-title" id="exampleModalLabel">New employee data</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    <form method="post" id="addNewEmployeeForm">    
+                    <form method="POST" id="formInputs">    
                         <div class="modal-body">
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping">Name</span>
@@ -133,14 +133,15 @@ require ('./library/employeeController.php');
             <table class="table mt-5">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Age</th>
-                        <th>street</th>
+                        <th>Street Address</th>
                         <th>City</th>
                         <th>State</th>
                         <th>Postal Code</th>
-                        <th>Phone number</th>
+                        <th>Phone Number</th>
                         <th>Open</th>
                         <th>Delete</th>
                     </tr>
