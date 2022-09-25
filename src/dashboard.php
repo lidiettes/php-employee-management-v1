@@ -3,7 +3,6 @@
 
 require ('./library/employeeController.php');
 
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +47,7 @@ require ('./library/employeeController.php');
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Dashboard</h1>
+        <h1 class="title">Dashboard LoveLance Squad</h1>
         <a href="../index.php" class="btn btn-sm btn btn-danger p-1"><i class="bi bi-box-arrow-left p-1"></i>Log Out</a>
 
         <hr class="border">
@@ -66,18 +65,23 @@ require ('./library/employeeController.php');
                         </div>
                     <form method="POST" id="formInputs">    
                         <div class="modal-body">
+                            <!-- <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">ID</span>
+                                <input type="text" id="id" name="id" class="form-control" aria-label="id" aria-describedby="addon-wrapping">
+                            </div>
+                            <br> -->
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping">Name</span>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">Last name</span>
+                                <span class="input-group-text" id="addon-wrapping">Last Name</span>
                                 <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter your last name" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">@</span>
+                                <span class="input-group-text" id="addon-wrapping">Email</span>
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
@@ -85,9 +89,9 @@ require ('./library/employeeController.php');
                                 <label class="input-group-text" for="inputGroupSelect01">Gender</label>
                                 <select class="form-select" id="gender" name="gender" id="inputGroupSelect01">
                                     <option selected>What gender do you identify with?</option>
-                                    <option value="Man">Man</option>
-                                    <option value="Woman">Woman</option>
-                                    <option value="Another">Another</option>
+                                    <option value="man">Man</option>
+                                    <option value="woman">Woman</option>
+                                    <option value="another">Another</option>
                                 </select>
                             </div>
                             <br>
@@ -112,12 +116,12 @@ require ('./library/employeeController.php');
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">Postal code</span>
+                                <span class="input-group-text" id="addon-wrapping">Postal Code</span>
                                 <input type="text" name="postalCode" class="form-control" placeholder="Enter your postal code" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">Phone number</span>
+                                <span class="input-group-text" id="addon-wrapping">Phone Number</span>
                                 <input type="text" name="phoneNumber" class="form-control" placeholder="Enter your phone number" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                         </div>
@@ -135,15 +139,17 @@ require ('./library/employeeController.php');
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Last Name</th>
                         <th>Email</th>
-                        <th>Age</th>
-                        <th>Street Address</th>
+                        <th>Gender</th>
                         <th>City</th>
+                        <th>Street Address</th>
                         <th>State</th>
+                        <th>Age</th>
                         <th>Postal Code</th>
-                        <th>Phone Number</th>
-                        <th>Open</th>
-                        <th>Delete</th>
+                        <th>Phone Number</th>    
+                        <th>Update/Edit</th>    
+                        <th>Delete</th>    
                     </tr>
                 </thead>
             <tbody id="tbody"></tbody>

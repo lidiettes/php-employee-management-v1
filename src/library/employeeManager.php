@@ -6,23 +6,6 @@ function getEmployeesData() {
 	
 }
 
-
-function deleteEmployee(string $id){
-        
-    
-        // foreach ($employees as $i => $employee){
-        //     if ($employee['id'] == $id){
-        //         array_splice($employees, $i, 1);
-            
-        //     }
-        // }
-    
-        // file_put_contents('../../resources/employees.json', json_encode($employees));
-        // file_put_contents('../../resources/employees.json', json_encode($users, JSON_PRETTY_PRINT));
-    }
-
-
-
 function addEmployee(array $newEmployee) {
 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
 	$newArray = array();
@@ -53,6 +36,23 @@ function addEmployee(array $newEmployee) {
 	file_put_contents("../../resources/employees.json", json_encode($employeeArray));
 // TODO implement it
 }
+
+
+
+function deleteEmployee(string $id){
+	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
+ 
+		 foreach($employeeArray as $employeeID) {
+			if($id == $employeeID["id"] ){
+				array_slice($employeeID,1);
+			}
+       
+	}
+    
+        file_put_contents("../../resources/employees.json", json_encode($employeeArray));
+}
+    
+
 
 
 
