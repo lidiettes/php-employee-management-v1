@@ -40,20 +40,15 @@ function addEmployee(array $newEmployee) {
 
 
 function deleteEmployee(string $id){
-	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
- 
-		 foreach($employeeArray as $employeeID) {
-			if($id == $employeeID["id"] ){
-				array_slice($employeeID,1);
-			}
-       
-	}
-    
-        file_put_contents("../../resources/employees.json", json_encode($employeeArray));
+        $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
+        for ($i = 0; $i < count($employees); $i++){
+            if ($employees[$i]['id'] == $id){
+            array_splice($employees, $i , 1);
+            }
+        }
+        file_put_contents('../../resources/employees.json', json_encode($employees));
+        echo json_encode($employees);
 }
-    
-
-
 
 
 

@@ -19,8 +19,8 @@ const renderEmployees = (jsonData) => {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-                <td><a href="#" id="update-employee" class="btn btn-success">Update</a></td>
-                <td><a href="#" id="delete-employee" class="btn btn-danger">Delete</a></td>
+                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
+                <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
                 `;
     tbody.appendChild(tr);
   }
@@ -36,24 +36,34 @@ function dashboardPrint() {
 }
 
 function deleteEmployee(idNum) {
-  tbody.addEventListener("click", () => {
-    let deleteBTNpressed = e.target.id == "delete-employee";
-    // let updateBTNpressed = e.target.id == "update-employee";
-
-    let idNum = e.target.parentElement.dataset.id;
-    if (deleteBTNpressed) {
-      //deleteBTNpressed= Must be 'true' when clicked
-      fetch(
-        `./library/employeeController.php?action=deleteEmployee&id=${idNum}`,
-        {
-          method: "DELETE",
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => location.reload());
-    }
-  });
+  fetch(`./library/employeeController.php?action=deleteEmployee&id=${idNum}`)
+    .then((res) => res.json())
+    .then((deleteJSON) => {
+      while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.firstChild);
+      }
+      for (let value of deleteJSON) {
+        let tr = document.createElement("tr");
+        tr.innerHTML += `
+                <td>${value.id}</td>
+                <td>${value.name}</td>
+                <td>${value.lastName}</td>
+                <td>${value.email}</td>
+                <td>${value.gender}</td>
+                <td>${value.city}</td>
+                <td>${value.streetAddress}</td>
+                <td>${value.state}</td>
+                <td>${value.age}</td>
+                <td>${value.postalCode}</td>
+                <td>${value.phoneNumber}</td>
+                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
+                <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
+                `;
+        tbody.appendChild(tr);
+      }
+    });
 }
+
 // --------------------------------------------
 // ADD NEW Employee (Create - Insert new employ into json file + show it on dashboard)
 
@@ -76,25 +86,21 @@ formInputs.addEventListener("submit", () => {
 // --------------------------------------------
 
 // function deleteEmployee(idNum) {
-//   fetch(`./library/employeeController.php?action=deleteEmployee&id=${idNum}`)
-//     .then((res) => res.json())
-//     .then((dataEmployList) => {
-//       for (let value of dataEmployList) {
-//         let tr = document.createElement("tr");
-//         tr.innerHTML = `
-//                 <td>${value.id}</td>
-//                 <td>${value.name}</td>
-//                 <td>${value.email}</td>
-//                 <td>${value.age}</td>
-//                 <td>${value.streetAddress}</td>
-//                 <td>${value.city}</td>
-//                 <td>${value.state}</td>
-//                 <td>${value.postalCode}</td>
-//                 <td>${value.phoneNumber}</td>
-//                 <td><a href="#" class="btn btn-success">Update</a></td>
-//                 <td><a href="#" class="btn btn-danger" onclick="deleteEmployee(${value.id})>Delete</a></td>
-//                 `;
-//         tbody.appendChild(tr);
-//       }
-//     });
+//   tbody.addEventListener("click", () => {
+//     let deleteBTNpressed = e.target.id == "delete-employee";
+//     // let updateBTNpressed = e.target.id == "update-employee";
+
+//     let idNum = e.target.parentElement.dataset.id;
+//     if (deleteBTNpressed) {
+//       //deleteBTNpressed= Must be 'true' when clicked
+//       fetch(
+//         `./library/employeeController.php?action=deleteEmployee&id=${idNum}`,
+//         {
+//           method: "DELETE",
+//         }
+//       )
+//         .then((res) => res.json())
+//         .then((res) => location.reload());
+//     }
+//   });
 // }
