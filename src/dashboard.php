@@ -49,8 +49,8 @@ require ('./library/employeeController.php');
     <div class="container">
         <h1 class="title">Dashboard LoveLance Squad</h1>
         <a href="../index.php" class="btn btn-sm btn btn-danger p-1"><i class="bi bi-box-arrow-left p-1"></i>Log Out</a>
-
         <hr class="border">
+
         <div class="content">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-sm btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-person-plus"></i> New Employee</button>
@@ -148,11 +148,14 @@ require ('./library/employeeController.php');
                         <th>Age</th>
                         <th>Postal Code</th>
                         <th>Phone Number</th>    
+                        <!-- Action BUTTONS -->
                         <th>Update/Edit</th>    
                         <th>Delete</th>    
                     </tr>
                 </thead>
-            <tbody id="tbody"></tbody>
+            <tbody id="tbody">
+                <!-- Dynamic Insert TR -->
+            </tbody>
             </table>
 
         </div>

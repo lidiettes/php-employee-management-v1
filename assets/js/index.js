@@ -27,7 +27,6 @@ const renderEmployees = (jsonData) => {
 };
 
 dashboardPrint();
-
 function dashboardPrint() {
   fetch("./library/employeeController.php?action=listEmployees")
     .then((res) => res.json())
@@ -36,15 +35,25 @@ function dashboardPrint() {
     });
 }
 
-tbody.addEventListener("click", () => {
-  let deleteBTNpressed = e.target.id == "delete-employee";
-  let updateBTNpressed = e.target.id == "update-employee";
-  if (deleteBTNpressed) {
-    // Must be 'true'
-    fetch;
-  }
-});
+function deleteEmployee(idNum) {
+  tbody.addEventListener("click", () => {
+    let deleteBTNpressed = e.target.id == "delete-employee";
+    // let updateBTNpressed = e.target.id == "update-employee";
 
+    let idNum = e.target.parentElement.dataset.id;
+    if (deleteBTNpressed) {
+      //deleteBTNpressed= Must be 'true' when clicked
+      fetch(
+        `./library/employeeController.php?action=deleteEmployee&id=${idNum}`,
+        {
+          method: "DELETE",
+        }
+      )
+        .then((res) => res.json())
+        .then((res) => location.reload());
+    }
+  });
+}
 // --------------------------------------------
 // ADD NEW Employee (Create - Insert new employ into json file + show it on dashboard)
 
