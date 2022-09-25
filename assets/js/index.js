@@ -22,7 +22,7 @@ function dashboardPrint() {
                 <td>${data[i].state}</td>
                 <td>${data[i].postalCode}</td>
                 <td>${data[i].phoneNumber}</td>
-                <td><button class="btn btn-success" onclick="deleteEmployee(${data[i].id})">Delete</button></td>
+                <td><button class="btn btn-sm btn btn-success" onclick="deleteEmployee(${data[i].id})">Delete</button></td>
                 <td><a href="" class="btn btn-sm btn btn-success" >Update</a></td>
                 `;
                 tbody.appendChild(tr);
@@ -52,7 +52,7 @@ function deleteEmployee(idNum) {
                     <td>${data[i].state}</td>
                     <td>${data[i].postalCode}</td>
                     <td>${data[i].phoneNumber}</td>
-                    <td><button class="btn btn-success" onclick="deleteEmployee(${data[i].id})">Delete</button></td>
+                    <td><button class="btn btn-sm btn btn-success" onclick="deleteEmployee(${data[i].id})">Delete</button></td>
                     <td><a href="" class="btn btn-sm btn btn-success">Update</a></td>
                     `;
                 tbody.appendChild(tr);
