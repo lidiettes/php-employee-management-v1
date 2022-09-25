@@ -45,10 +45,10 @@ require ('./library/employeeController.php');
 
 <body>
     <div class="container">
-        <h1 class="title">Dashboard</h1>
+        <h1 class="title">Dashboard LoveLance Squad</h1>
         <a href="../index.php" class="btn btn-sm btn btn-danger p-1"><i class="bi bi-box-arrow-left p-1"></i>Log Out</a>
-
         <hr class="border">
+
         <div class="content">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-sm btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-person-plus"></i> New Employee</button>
@@ -63,18 +63,23 @@ require ('./library/employeeController.php');
                         </div>
                     <form method="POST" id="formInputs">    
                         <div class="modal-body">
+                            <!-- <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">ID</span>
+                                <input type="text" id="id" name="id" class="form-control" aria-label="id" aria-describedby="addon-wrapping">
+                            </div>
+                            <br> -->
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping">Name</span>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">Last name</span>
+                                <span class="input-group-text" id="addon-wrapping">Last Name</span>
                                 <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter your last name" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">@</span>
+                                <span class="input-group-text" id="addon-wrapping">Email</span>
                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
@@ -109,12 +114,12 @@ require ('./library/employeeController.php');
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">Postal code</span>
+                                <span class="input-group-text" id="addon-wrapping">Postal Code</span>
                                 <input type="text" name="postalCode" class="form-control" placeholder="Enter your postal code" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <br>
                             <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">Phone number</span>
+                                <span class="input-group-text" id="addon-wrapping">Phone Number</span>
                                 <input type="text" name="phoneNumber" class="form-control" placeholder="Enter your phone number" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                         </div>
@@ -134,22 +139,23 @@ require ('./library/employeeController.php');
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>LastName</th>
+                        <th>Last Name</th>
                         <th>Email</th>
                         <th>Gender</th>
                         <th>City</th>
-                        <th>StreetAddress</th>
+                        <th>Street Address</th>
                         <th>State</th>
                         <th>Age</th>
-                        <th>Postalcode</th>
-                        <th>Phone</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Postal Code</th>
+                        <th>Phone Number</th>    
+                        <!-- Action BUTTONS -->
+                        <th>Update/Edit</th>    
+                        <th>Delete</th>    
                     </tr>
-                    </thead>
-                    <tbody id="tbody"></tbody>
-
-        
+                </thead>
+            <tbody id="tbody">
+                <!-- Dynamic Insert TR -->
+            </tbody>
             </table>
 
             </div>

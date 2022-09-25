@@ -15,6 +15,7 @@ function getEmployeesData() {
 	return file_get_contents("../../resources/employees.json");
 }
 
+<<<<<<< HEAD
 
 function deleteEmployee(string $id){
         $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
@@ -27,6 +28,8 @@ function deleteEmployee(string $id){
         echo json_encode($employees);
 }
 
+=======
+>>>>>>> 6ee2369f751ab70998cdeab8ea9f7cd4e1f015c7
 function addEmployee(array $newEmployee) {
 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
 	$newArray = array();
@@ -62,6 +65,7 @@ function addEmployee(array $newEmployee) {
 
 // // function updateUser($data, $id){
 
+<<<<<<< HEAD
 // //     $updateEmployee = [];
 // //     $employees = getEmployees();
 // //     foreach ($employees as $i => $employee){
@@ -69,6 +73,20 @@ function addEmployee(array $newEmployee) {
 // //             $employee[$i] = $updateEmployee = array_merge($employee, $data);
 // //         }
 // //     }
+=======
+function deleteEmployee(string $id){
+        $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
+        for ($i = 0; $i < count($employees); $i++){
+            if ($employees[$i]['id'] == $id){
+            array_splice($employees, $i , 1);
+            }
+        }
+        file_put_contents('../../resources/employees.json', json_encode($employees));
+        echo json_encode($employees);
+}
+
+
+>>>>>>> 6ee2369f751ab70998cdeab8ea9f7cd4e1f015c7
 
 // //     file_put_contents('../resources/employees.json', json_encode($employees, JSON_PRETTY_PRINT));
 // //     return $updateEmployee;
