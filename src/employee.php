@@ -194,7 +194,7 @@ $newEmployeObj = getEmployee($employId);
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger p-2" data-bs-dismiss="modal"><i class="bi bi-x-circle p-1"></i>Close</button>
-                            <a href="library/employeeController.php?action=updateEmploy" type="submit" name="submit" class="btn btn-primary p-2"><i class="bi bi-box-arrow-down p-1"></i>Save employee</a>
+                            <a href="library/employeeController.php?action=updateEmploy&id=<?php echo $newEmployeObj['id'] ?>"  type="submit" name="submit" class="btn btn-primary p-2"><i class="bi bi-box-arrow-down p-1"></i>Save employee</a>
                         </div>
                     </form>    
 

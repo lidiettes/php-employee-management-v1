@@ -1,6 +1,6 @@
 const tbody = document.getElementById("tbody");
 const formInputs = document.getElementById("formInputs");
-const modalUpdateInputs = document.getElementById("modal_update_inputs");
+// const modalUpdateInputs = document.getElementById("modal_update_inputs");
 
 // READ and Send fetch data from json file
 const renderEmployees = (jsonData) => {
@@ -84,18 +84,18 @@ formInputs.addEventListener("submit", () => {
     });
 });
 
-modalUpdateInputs.addEventListener("submit", () => {
-  // Necesitamos instanciarlo ya que sino en el body: tendríamos que poner JSON.strinfy (para convertirlo en un objeto)
-  // Además tendríamos que especificar que valores quiero enviar
-  let dataObj = new FormData(formInputs);
+// modalUpdateInputs.addEventListener("submit", () => {
+//   // Necesitamos instanciarlo ya que sino en el body: tendríamos que poner JSON.strinfy (para convertirlo en un objeto)
+//   // Además tendríamos que especificar que valores quiero enviar
+//   let dataObj = new FormData(formInputs);
 
-  fetch("./library/employeeController.php?action=createEmploy", {
-    method: "POST",
-    body: dataObj,
-  })
-    .then((res) => res.json())
-    .then((newEmployeeData) => {
-      // Le envío al Render (que nos pinta la tabla un nuevo Objeto con los datos del Input)
-      renderEmployees(newEmployeeData);
-    });
-});
+//   fetch("./library/employeeController.php?action=createEmploy", {
+//     method: "POST",
+//     body: dataObj,
+//   })
+//     .then((res) => res.json())
+//     .then((newEmployeeData) => {
+//       // Le envío al Render (que nos pinta la tabla un nuevo Objeto con los datos del Input)
+//       renderEmployees(newEmployeeData);
+//     });
+// });
