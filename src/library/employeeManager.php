@@ -39,6 +39,50 @@ function addEmployee(array $newEmployee) {
 
 
 
+// function updateEmployee(array $updateEmployee )
+// {
+// // TODO implement it
+// $employeeData  = json_decode(file_get_contents('../../resources/employees.json'), true);
+
+
+// 	for($i=0; $i < count($employeData); $i++){
+	
+// 		if($employeData[$i]['id'] == $updateEmployee['id']){
+
+// 			   $employeData[$i]  = $updateEmployee;
+            
+
+// 			// display current employ
+// 			// $employeDataObj[$i] = array_merge($employeDataObj, $updateEmployee);
+// 		}
+			
+// 	}
+// 			file_put_contents("../../resources/employees.json", json_encode($employeData));
+// 			header("Location: ../dashboard.php");
+  	
+// }
+
+// UPDATE EMPLOYEE
+function updateEmployee($employeData, $id){
+     
+    $updateEmployee = [];
+    $employees = getEmployees();
+    foreach ($employees as $i => $employee){
+        if ($employee['id'] == $id){
+            $employees[$i] = $updateEmployee= array_merge($employee, $data);
+        }
+		
+    }
+
+    file_put_contents('../resources/employees.json', json_encode($employees, JSON_PRETTY_PRINT));
+   
+    return $updateEmployee;
+}
+
+
+
+
+
 function deleteEmployee(string $id){
         $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
         for ($i = 0; $i < count($employees); $i++){
@@ -52,23 +96,25 @@ function deleteEmployee(string $id){
 
 
 
+function getEmployee(string $id){
 
-function getEmployess()
-{
-    return json_decode(file_get_contents("../../resources/employees.json"), true);
+$employeData  = json_decode(file_get_contents('../resources/employees.json'), true);
+
+	foreach($employeData as $employeDataObj){
+		// Si el $employeObj == al parametro Id
+		if($employeDataObj['id'] == $id){
+			// display current employ
+			return $employeDataObj;
+		}
+	}
+	return null;
+
 }
 
-function getEmployeeById(string $id)
-{
-    
-		$employees = getEmployees();
-		foreach ($employess as $employee){
-			if ($employee['id'] == $id){
-				return $employee;
-			}
-		}
-		return null;
-	}
+
+
+
+
 
 
 

@@ -135,7 +135,7 @@ require ('./library/employeeController.php');
                 </div>
             </div>
 
-            <table class="table mt-5">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -151,7 +151,7 @@ require ('./library/employeeController.php');
                         <th>Phone Number</th>    
                         <!-- Action BUTTONS -->
                         <th>View</th>
-                        <th>Update/Edit</th>    
+                        <th>Update</th>    
                         <th>Delete</th>    
                     </tr>
                 </thead>
