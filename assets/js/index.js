@@ -19,8 +19,11 @@ const renderEmployees = (jsonData) => {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
-                <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
+                <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
+                <td><a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Update
+                    </a></td>
+                <td><a class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</a></td>
                 `;
     tbody.appendChild(tr);
   }
@@ -56,8 +59,11 @@ function deleteEmployee(idNum) {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
-                <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
+                <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
+                <td><a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Update
+                    </a></td>
+                <td><a class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</a></td>
                 `;
         tbody.appendChild(tr);
       }
@@ -83,24 +89,19 @@ formInputs.addEventListener("submit", () => {
     });
 });
 
-// --------------------------------------------
+// ------------------------------------------------------
+formInputs.addEventListener("submit", () => {
+  // Necesitamos instanciarlo ya que sino en el body: tendríamos que poner JSON.strinfy (para convertirlo en un objeto)
+  // Además tendríamos que especificar que valores quiero enviar
+  let dataObj = new FormData(formInputs);
 
-// function deleteEmployee(idNum) {
-//   tbody.addEventListener("click", () => {
-//     let deleteBTNpressed = e.target.id == "delete-employee";
-//     // let updateBTNpressed = e.target.id == "update-employee";
-
-//     let idNum = e.target.parentElement.dataset.id;
-//     if (deleteBTNpressed) {
-//       //deleteBTNpressed= Must be 'true' when clicked
-//       fetch(
-//         `./library/employeeController.php?action=deleteEmployee&id=${idNum}`,
-//         {
-//           method: "DELETE",
-//         }
-//       )
-//         .then((res) => res.json())
-//         .then((res) => location.reload());
-//     }
-//   });
-// }
+  fetch(`./library/employeeController.php?id=${value.id}&action=updateEmploy`, {
+    method: "POST",
+    body: dataObj,
+  })
+    .then((res) => res.json())
+    .then((newEmployeeData) => {
+      // Le envío al Render (que nos pinta la tabla un nuevo Objeto con los datos del Input)
+      renderEmployees(newEmployeeData);
+    });
+});

@@ -41,7 +41,7 @@ require ('./library/employeeController.php');
             flex: 3;
         }
     </style>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js" integrity="sha512-blBYtuTn9yEyWYuKLh8Faml5tT/5YPG0ir9XEABu5YCj7VGr2nb21WPFT9pnP4fcC3y0sSxJR1JqFTfTALGuPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    
     <script src="../assets/js/index.js" defer></script>
 
 </head>
@@ -60,7 +60,7 @@ require ('./library/employeeController.php');
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New employee data</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Add-Edit</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                     <form method="POST" id="formInputs">    

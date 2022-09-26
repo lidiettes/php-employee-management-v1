@@ -39,6 +39,36 @@ function addEmployee(array $newEmployee) {
 
 
 
+function updateEmployee(array $updateEmployee)
+{
+// TODO implement it
+$employeData  = json_decode(file_get_contents('../resources/employees.json'), true);
+	$employId = $_GET['id'];
+	$newEditArr = array();
+
+	foreach($employeData as $employeObj ){
+		if($employId = $employeObj['id']){
+			
+		}
+	}
+
+	// foreach($employeData as $i => $employeDataObj){
+		
+	// 	if($employeDataObj['id'] == $employId ){
+	// 		// display current employ
+	// 		$employeDataObj[$i] = array_merge($employeDataObj, $updateEmployee);
+	// 	}
+	// }
+
+	file_put_contents('../../resources/employees.json', json_encode($employeData));
+  	
+}
+
+
+
+
+
+
 function deleteEmployee(string $id){
         $employees = json_decode(file_get_contents('../../resources/employees.json'), true);
         for ($i = 0; $i < count($employees); $i++){
@@ -52,16 +82,26 @@ function deleteEmployee(string $id){
 
 
 
-function updateEmployee(array $updateEmployee)
-{
-// TODO implement it
+function getEmployee(string $id){
+
+$employeData  = json_decode(file_get_contents('../resources/employees.json'), true);
+
+	foreach($employeData as $employeDataObj){
+		// Si el $employeObj == al parametro Id
+		if($employeDataObj['id'] == $id){
+			// display current employ
+			return $employeDataObj;
+		}
+	}
+	return null;
+
 }
 
 
-function getEmployee(string $id)
-{
-// TODO implement it
-}
+
+
+
+
 
 
 function removeAvatar($id)
