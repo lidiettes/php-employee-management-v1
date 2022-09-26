@@ -19,9 +19,13 @@ const renderEmployees = (jsonData) => {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
-                <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
+                <td><button class="btn btn-outline-info"><i class="far fa-eye" data-viewId=<?= $employee["id"]?></i></button></td>
+                <td><button class="btn btn-outline-secondary"><i class="fas fa-user-edit"></i></button></td>
+                <td><button id="delete-employee" class="btn btn-outline-danger" onclick="deleteEmployee(${value.id})"><i class="far fa-trash-alt"></i></button></td>
                 `;
+
+
+
     tbody.appendChild(tr);
   }
 };
@@ -56,8 +60,9 @@ function deleteEmployee(idNum) {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
+                <td><button class="btn btn-outline-info"><i class="far fa-eye" data-viewId=<?= $employee["id"]?></i></button></td>
                 <td><button  id="update-employee" class="btn btn-success">Update</button></td>
-                <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
+                <td><button  id="delete-employee" class="btn btn-outline-danger" onclick="deleteEmployee(${value.id})"><i class="far fa-trash-alt"></i></button></td>
                 `;
         tbody.appendChild(tr);
       }

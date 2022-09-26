@@ -52,16 +52,24 @@ function deleteEmployee(string $id){
 
 
 
-function updateEmployee(array $updateEmployee)
+
+function getEmployess()
 {
-// TODO implement it
+    return json_decode(file_get_contents("../../resources/employees.json"), true);
 }
 
-
-function getEmployee(string $id)
+function getEmployeeById(string $id)
 {
-// TODO implement it
-}
+    
+		$employees = getEmployees();
+		foreach ($employess as $employee){
+			if ($employee['id'] == $id){
+				return $employee;
+			}
+		}
+		return null;
+	}
+
 
 
 function removeAvatar($id)

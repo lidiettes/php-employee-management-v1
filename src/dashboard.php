@@ -15,7 +15,8 @@ require ('./library/employeeController.php');
     <link rel="stylesheet" href="../assets/css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-   <!-- Ojo, con las funciones que vinen de index.js -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- Ojo, con las funciones que vinen de index.js -->
     <script src="../assets/js/index.js" defer></script>
     <style>
         .modal-content h5{
@@ -149,6 +150,7 @@ require ('./library/employeeController.php');
                         <th>Postal Code</th>
                         <th>Phone Number</th>    
                         <!-- Action BUTTONS -->
+                        <th>View</th>
                         <th>Update/Edit</th>    
                         <th>Delete</th>    
                     </tr>
