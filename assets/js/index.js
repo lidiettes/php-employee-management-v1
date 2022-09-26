@@ -51,7 +51,7 @@ function deleteEmployee(idNum) {
                 <td>${value.lastName}</td>
                 <td>${value.email}</td>
                 <td>${value.gender}</td>
-                <td>${value.city}</td>
+                <td>${value.city}</td>s
                 <td>${value.streetAddress}</td>
                 <td>${value.state}</td>
                 <td>${value.age}</td>
@@ -87,15 +87,32 @@ formInputs.addEventListener("submit", () => {
 // modalUpdateInputs.addEventListener("submit", () => {
 //   // Necesitamos instanciarlo ya que sino en el body: tendríamos que poner JSON.strinfy (para convertirlo en un objeto)
 //   // Además tendríamos que especificar que valores quiero enviar
-//   let dataObj = new FormData(formInputs);
+//   let dataObj = new FormData(modalUpdateInputs);
 
-//   fetch("./library/employeeController.php?action=createEmploy", {
+//   fetch("./library/employeeController.php?action=updateEmploy", {
 //     method: "POST",
 //     body: dataObj,
 //   })
 //     .then((res) => res.json())
-//     .then((newEmployeeData) => {
-//       // Le envío al Render (que nos pinta la tabla un nuevo Objeto con los datos del Input)
-//       renderEmployees(newEmployeeData);
+//     .then((updateEmployeeData) => {
+//       for (let value of updateEmployeeData) {
+//         let tr = document.createElement("tr");
+//         tr.innerHTML += `
+//                 <td>${value.id}</td>
+//                 <td>${value.name}</td>
+//                 <td>${value.lastName}</td>
+//                 <td>${value.email}</td>
+//                 <td>${value.gender}</td>
+//                 <td>${value.city}</td>
+//                 <td>${value.streetAddress}</td>
+//                 <td>${value.state}</td>
+//                 <td>${value.age}</td>
+//                 <td>${value.postalCode}</td>
+//                 <td>${value.phoneNumber}</td>
+//                 <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
+//                 <td><a class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</a></td>
+//                 `;
+//         tbody.appendChild(tr);
+//       }
 //     });
 // });

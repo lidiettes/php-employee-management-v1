@@ -21,13 +21,12 @@ if(isset($_GET["action"]) && $_GET["action"] === "listEmployees"){
         ];
         addEmployee($newEmployee);
 
-    } else if (isset($_GET['action']) && $_GET['action'] === 'updateEmploy'){
-      
-        
-    $updateEmployee = [
-            "id"           =>  $getId,            
+    } else if (isset($_GET['id'])) {
+        $getID = $_GET['id'];
+        $updateEmployee = array(
+            "id"            => $getID,
             "name"          => $_POST['name'],
-            "lastName"      => $_POST['lastName'],
+            "lastName"      => $_POST['lastName'], 
             "email"         => $_POST['email'],
             "gender"        => $_POST['gender'],
             "city"          => $_POST['city'],
@@ -35,14 +34,14 @@ if(isset($_GET["action"]) && $_GET["action"] === "listEmployees"){
             "state"         => $_POST['state'],
             "age"           => $_POST['age'],
             "postalCode"    => $_POST['postalCode'],
-            "phoneNumber"   => $_POST['phoneNumber']
+            "phoneNumber"   => $_POST['phoneNumber'],
+        );
+        updateEmployee($updateEmployee);
+        // header("Location: ./dashboard.php");
 
-    ];
-   
-
-}  else if  (isset($_GET['action']) && $_GET['action'] === 'deleteEmployee' ){
-    $employeeId = $_GET['id'];
-    deleteEmployee($employeeId);
+    } else if  (isset($_GET['action']) && $_GET['action'] === 'deleteEmployee' ){
+        $employeeId = $_GET['id'];
+        deleteEmployee($employeeId);
 }
 ?>
 

@@ -129,8 +129,9 @@ $newEmployeObj = getEmployee($employId);
             <h5 class="modal-title" id="exampleModalLabel">Update User: <b><?php echo $newEmployeObj['name'] ?></b></h5> 
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <div class="modal-body mt-4">
-               <form method="POST" id="modal_update_inputs" enctype="multipart/form-data">    
+               <form method="POST" action="library/employeeController.php?id=<?php echo $newEmployeObj['id'] ?>" id="modal_update_inputs" enctype="multipart/form-data">    
                         <div class="modal-body">
                             <!-- <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping">ID</span>
@@ -194,7 +195,7 @@ $newEmployeObj = getEmployee($employId);
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger p-2" data-bs-dismiss="modal"><i class="bi bi-x-circle p-1"></i>Close</button>
-                            <a href="library/employeeController.php?action=updateEmploy&id=<?php echo $newEmployeObj['id'] ?>"  type="submit" name="submit" class="btn btn-primary p-2"><i class="bi bi-box-arrow-down p-1"></i>Save employee</a>
+                            <button type="submit" name="submit" class="btn btn-primary p-2"><i class="bi bi-box-arrow-down p-1"></i>Save employee</button>
                         </div>
                     </form>    
 

@@ -39,39 +39,26 @@ function addEmployee(array $newEmployee) {
 
 
 
-function updateEmployee(array $updateEmployee, $id)
+function updateEmployee(array $updateEmployee )
 {
 // TODO implement it
-$employeData  = json_decode(file_get_contents('../resources/employees.json'), true);
-
-	// for($i = 0; $i < count($employeData); $i++){
-	// 	if($employeData[$i]['id'] ==  $updateEmployee['id']){
-	// 		    $employeData[$i]['name']           = $updateEmployee['name'];
-    //             $employeData[$i]['lastName']       = $updateEmployee['lastName'];
-    //             $employeData[$i]['email']          = $updateEmployee['email'];
-    //             $employeData[$i]['gender']         = $updateEmployee['gender'];
-    //             $employeData[$i]['city']           = $updateEmployee['city'];
-    //             $employeData[$i]['streetAddress']  = $updateEmployee['streetAddress'];
-    //             $employeData[$i]['state']          = $updateEmployee['state'];
-    //             $employeData[$i]['age']            = $updateEmployee['age'];
-    //             $employeData[$i]['postalCode']     = $updateEmployee['postalCode'];
-    //             $employeData[$i]['phoneNumber']    = $updateEmployee['phoneNumber'];
-	// 	}
-
-	// 	file_put_contents('../../resources/employees.json', json_encode($employeData));
-	// }
+$employeData  = json_decode(file_get_contents('../../resources/employees.json'), true);
 
 
-	foreach($employeData as $i => $employeDataObj){
-		
-		if($employeDataObj['id'] == $id){
+	for($i=0; $i < count($employeData); $i++){
+	
+		if($employeData[$i]['id'] == $updateEmployee['id']){
+
+			   $employeData[$i]  = $updateEmployee;
+            
+
 			// display current employ
-			$employeDataObj[$i] = array_merge($employeDataObj, $updateEmployee);
+			// $employeDataObj[$i] = array_merge($employeDataObj, $updateEmployee);
 		}
-			file_put_contents('../../resources/employees.json', json_encode($employeData));
 			
 	}
-
+			file_put_contents("../../resources/employees.json", json_encode($employeData));
+			header("Location: ../dashboard.php");
   	
 }
 
