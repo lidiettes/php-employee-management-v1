@@ -39,28 +39,39 @@ function addEmployee(array $newEmployee) {
 
 
 
-function updateEmployee(array $updateEmployee)
+function updateEmployee(array $updateEmployee, $id)
 {
 // TODO implement it
 $employeData  = json_decode(file_get_contents('../resources/employees.json'), true);
-	$employId = $_GET['id'];
-	$newEditArr = array();
 
-	foreach($employeData as $employeObj ){
-		if($employId = $employeObj['id']){
-			
-		}
-	}
-
-	// foreach($employeData as $i => $employeDataObj){
-		
-	// 	if($employeDataObj['id'] == $employId ){
-	// 		// display current employ
-	// 		$employeDataObj[$i] = array_merge($employeDataObj, $updateEmployee);
+	// for($i = 0; $i < count($employeData); $i++){
+	// 	if($employeData[$i]['id'] ==  $updateEmployee['id']){
+	// 		    $employeData[$i]['name']           = $updateEmployee['name'];
+    //             $employeData[$i]['lastName']       = $updateEmployee['lastName'];
+    //             $employeData[$i]['email']          = $updateEmployee['email'];
+    //             $employeData[$i]['gender']         = $updateEmployee['gender'];
+    //             $employeData[$i]['city']           = $updateEmployee['city'];
+    //             $employeData[$i]['streetAddress']  = $updateEmployee['streetAddress'];
+    //             $employeData[$i]['state']          = $updateEmployee['state'];
+    //             $employeData[$i]['age']            = $updateEmployee['age'];
+    //             $employeData[$i]['postalCode']     = $updateEmployee['postalCode'];
+    //             $employeData[$i]['phoneNumber']    = $updateEmployee['phoneNumber'];
 	// 	}
+
+	// 	file_put_contents('../../resources/employees.json', json_encode($employeData));
 	// }
 
-	file_put_contents('../../resources/employees.json', json_encode($employeData));
+
+	foreach($employeData as $i => $employeDataObj){
+		
+		if($employeDataObj['id'] == $id){
+			// display current employ
+			$employeDataObj[$i] = array_merge($employeDataObj, $updateEmployee);
+		}
+			file_put_contents('../../resources/employees.json', json_encode($employeData));
+			
+	}
+
   	
 }
 

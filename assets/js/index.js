@@ -1,5 +1,6 @@
 const tbody = document.getElementById("tbody");
 const formInputs = document.getElementById("formInputs");
+const modalUpdateInputs = document.getElementById("modal_update_inputs");
 
 // READ and Send fetch data from json file
 const renderEmployees = (jsonData) => {
@@ -20,9 +21,6 @@ const renderEmployees = (jsonData) => {
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
                 <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
-                <td><a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Update
-                    </a></td>
                 <td><a class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</a></td>
                 `;
     tbody.appendChild(tr);
@@ -60,9 +58,6 @@ function deleteEmployee(idNum) {
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
                 <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
-                <td><a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Update
-                    </a></td>
                 <td><a class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</a></td>
                 `;
         tbody.appendChild(tr);
@@ -89,13 +84,12 @@ formInputs.addEventListener("submit", () => {
     });
 });
 
-// ------------------------------------------------------
-formInputs.addEventListener("submit", () => {
+modalUpdateInputs.addEventListener("submit", () => {
   // Necesitamos instanciarlo ya que sino en el body: tendríamos que poner JSON.strinfy (para convertirlo en un objeto)
   // Además tendríamos que especificar que valores quiero enviar
   let dataObj = new FormData(formInputs);
 
-  fetch(`./library/employeeController.php?id=${value.id}&action=updateEmploy`, {
+  fetch("./library/employeeController.php?action=createEmploy", {
     method: "POST",
     body: dataObj,
   })

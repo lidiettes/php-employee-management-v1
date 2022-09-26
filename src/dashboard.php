@@ -87,8 +87,8 @@ require ('./library/employeeController.php');
                             <br>
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="inputGroupSelect01">Gender</label>
-                                <select class="form-select" id="gender" name="gender" id="inputGroupSelect01">
-                                    <option selected>What gender do you identify with?</option>
+                                <select class="form-select" id="gender" name="gender" id="inputGroupSelect01" value="gender">
+                                    <option selected disabled>What gender do you identify with?</option>
                                     <option value="Man">Man</option>
                                     <option value="Woman">Woman</option>
                                     <option value="Another">Another</option>

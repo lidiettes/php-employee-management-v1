@@ -22,8 +22,10 @@ if(isset($_GET["action"]) && $_GET["action"] === "listEmployees"){
         addEmployee($newEmployee);
 
     } else if (isset($_GET['action']) && $_GET['action'] === 'updateEmploy'){
-   
-    $updateEmployee = [                       
+      
+        
+    $updateEmployee = [
+            "id"           =>  $getId,            
             "name"          => $_POST['name'],
             "lastName"      => $_POST['lastName'],
             "email"         => $_POST['email'],
@@ -36,7 +38,7 @@ if(isset($_GET["action"]) && $_GET["action"] === "listEmployees"){
             "phoneNumber"   => $_POST['phoneNumber']
 
     ];
-    updateEmployee($updateEmployee);
+   
 
 }  else if  (isset($_GET['action']) && $_GET['action'] === 'deleteEmployee' ){
     $employeeId = $_GET['id'];
