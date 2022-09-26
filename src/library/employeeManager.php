@@ -10,7 +10,6 @@ function addEmployee(array $newEmployee) {
 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
 	$newArray = array();
 	$id = array();
-	
     foreach($employeeArray as $employee) {
         // ID vacío para almacenar los ids del json
 		$id[] = $employee["id"];
@@ -23,6 +22,8 @@ function addEmployee(array $newEmployee) {
 		"id" => $newId,
 		"name" => $newEmployee["name"],
 		"email" => $newEmployee["email"],
+		"lastName" => $newEmployee["lastName"],
+		"gender" => $newEmployee["gender"],
 		"age" => $newEmployee["age"],
 		"streetAddress" => $newEmployee["streetAddress"],
 		"city" => $newEmployee["city"],
