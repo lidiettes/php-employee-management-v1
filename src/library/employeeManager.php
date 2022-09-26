@@ -35,7 +35,6 @@ function addEmployee(array $newEmployee) {
 	array_push($employeeArray, $newArray);
 
 	file_put_contents("../../resources/employees.json", json_encode($employeeArray));
-// TODO implement it
 }
 
 
