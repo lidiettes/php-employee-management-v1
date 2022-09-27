@@ -20,7 +20,7 @@ function loginAdmin($postUser, $postPass) {
                 if (($postUser === $json['name']) || 
                     ($postUser === $json['email'])) {
                     if (password_verify($postPass, $json['password'])){
-                        echo json_encode('OK');
+                        // echo json_encode('OK');
 
                         // Session Id para comprobar si la session está seteada(iniciada) o no
                         $userID = $json['userId'];
@@ -43,9 +43,15 @@ function loginAdmin($postUser, $postPass) {
     }
 }
 
-function userISSET() {
-        if (!isset($_SESSION['user'])) {
-            header('location: ../index.php');
-        }
-    }
+function logOut(){
+    // session_start();
+    // session_unset();
+    // session_destroy();
+
+    echo "hola log out!!!!";
+
+    // header('Location: ../index.php');
+}
+
+
 ?>

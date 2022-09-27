@@ -1,6 +1,11 @@
 <?php
-
+// session_start();
 require ('./library/employeeController.php');
+
+// if(!isset($_SESSION['user'])){
+//     echo "Hola OK";
+//     header('Location: ../index.php');
+// }
 
 ?>
 
@@ -52,7 +57,10 @@ require ('./library/employeeController.php');
     <div class="container">
         <h1 class="title text-center">Dashboard LoveLance</h1>
         <!-- Exit to Login-Page -->
-        <a href="../index.php" class="btn btn-sm btn btn-danger p-1">Log Out</a>
+        <form action="library/loginController.php?action=logOut" method="GET">
+            <input name="logOut" class="btn btn-sm btn btn-danger p-1" value="Log Out" type="submit">
+        </form>
+        
         <hr class="border">
 
         <div class="content">
