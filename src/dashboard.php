@@ -1,4 +1,3 @@
-<!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
 <?php
 
 require ('./library/employeeController.php');
@@ -11,13 +10,14 @@ require ('./library/employeeController.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draft Contents</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>PHP Employee Management </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-   <!-- Ojo, con las funciones que vinen de index.js -->
     <script src="../assets/js/index.js" defer></script>
     <style>
+        body{
+            height: 100vh;
+        }
         .modal-content h5{
             text-align: center;
             font-size: 30px;
@@ -40,36 +40,37 @@ require ('./library/employeeController.php');
         input{
             flex: 3;
         }
-    </style>
     
-    <script src="../assets/js/index.js" defer></script>
-
+        h1,h2,h3,h4,h5,h6{
+            text-align: center;
+            font-weight: bold;
+        }
+    
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Dashboard LoveLance Squad</h1>
-        <a href="../index.php" class="btn btn-sm btn btn-danger p-1"><i class="bi bi-box-arrow-left p-1"></i>Log Out</a>
+        <h1 class="title text-center">Dashboard LoveLance</h1>
+        <!-- Exit to Login-Page -->
+        <a href="../index.php" class="btn btn-sm btn btn-danger p-1">Log Out</a>
         <hr class="border">
 
         <div class="content">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-sm btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-person-plus"></i> New Employee</button>
+            <button type="button" class="btn btn-sm btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">New Employee</button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- Modal Add New Employee-->
+            <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add-Edit</h5>
+                        <div class="modal-header ">
+                            <h5 id="text-center" class="modal-title" id="exampleModalLabel">Add Employee</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    <form method="POST" id="formInputs">    
+
+                        <!-- Add Employee Form -->
+                    <form method="POST" id="formInputs" class="mt-5">    
                         <div class="modal-body">
-                            <!-- <div class="input-group flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping">ID</span>
-                                <input type="text" id="id" name="id" class="form-control" aria-label="id" aria-describedby="addon-wrapping">
-                            </div>
-                            <br> -->
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="addon-wrapping">Name</span>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" aria-label="Username" aria-describedby="addon-wrapping">
@@ -126,14 +127,15 @@ require ('./library/employeeController.php');
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger p-2" data-bs-dismiss="modal"><i class="bi bi-x-circle p-1"></i>Close</button>
-                            <button type="submit" name="submit" class="btn btn-primary p-2"><i class="bi bi-box-arrow-down p-1"></i>Save employee</button>
+                            <button type="button" class="btn btn-danger p-2" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" class="btn btn-primary p-2">Save employee</button>
                         </div>
                     </form>    
                     </div>
                 </div>
             </div>
 
+            <!-- Table list of Employees -->
             <table class="table mt-5">
                 <thead>
                     <tr>
@@ -154,7 +156,7 @@ require ('./library/employeeController.php');
                     </tr>
                 </thead>
             <tbody id="tbody">
-                <!-- Dynamic Insert TR -->
+                <!-- Dynamic Insert TR from JS-->
             </tbody>
             </table>
 
