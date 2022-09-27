@@ -19,7 +19,7 @@ const renderEmployees = (jsonData) => {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
+                <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
                 <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
                 `;
     tbody.appendChild(tr);
@@ -56,7 +56,7 @@ function deleteEmployee(idNum) {
                 <td>${value.age}</td>
                 <td>${value.postalCode}</td>
                 <td>${value.phoneNumber}</td>
-                <td><button  id="update-employee" class="btn btn-success">Update</button></td>
+                <td><a href="employee.php?id=${value.id}" class="btn btn-success">View</a></td>
                 <td><button  id="delete-employee" class="btn btn-danger" onclick="deleteEmployee(${value.id})">Delete</button></td>
                 `;
         tbody.appendChild(tr);
@@ -68,8 +68,6 @@ function deleteEmployee(idNum) {
 // ADD NEW Employee (Create - Insert new employ into json file + show it on dashboard)
 
 formInputs.addEventListener("submit", () => {
-  // Necesitamos instanciarlo ya que sino en el body: tendríamos que poner JSON.strinfy (para convertirlo en un objeto)
-  // Además tendríamos que especificar que valores quiero enviar
   let dataObj = new FormData(formInputs);
 
   fetch("./library/employeeController.php?action=createEmploy", {
@@ -83,24 +81,97 @@ formInputs.addEventListener("submit", () => {
     });
 });
 
-// --------------------------------------------
 
-// function deleteEmployee(idNum) {
-//   tbody.addEventListener("click", () => {
-//     let deleteBTNpressed = e.target.id == "delete-employee";
-//     // let updateBTNpressed = e.target.id == "update-employee";
 
-//     let idNum = e.target.parentElement.dataset.id;
-//     if (deleteBTNpressed) {
-//       //deleteBTNpressed= Must be 'true' when clicked
-//       fetch(
-//         `./library/employeeController.php?action=deleteEmployee&id=${idNum}`,
-//         {
-//           method: "DELETE",
-//         }
-//       )
-//         .then((res) => res.json())
-//         .then((res) => location.reload());
-//     }
-//   });
-// }
+// formInputs.addEventListener("updateEmployee",())
+
+// `
+// <body>
+//     <div class="container">
+//         <h1 class="title">Dashboard LoveLance Squad</h1>
+//         <a href="../index.php" class="btn btn-sm btn btn-danger p-1"><i class="bi bi-box-arrow-left p-1"></i>Log Out</a>
+//         <hr class="border">
+
+//         <div class="content">
+//             <!-- Button trigger modal -->
+//             <button type="button" class="btn btn-sm btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-person-plus"></i> New Employee</button>
+
+//             <!-- Modal -->
+//             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//                 <div class="modal-dialog">
+//                     <div class="modal-content">
+//                         <div class="modal-header">
+//                             <h5 class="modal-title" id="exampleModalLabel">New employee data</h5>
+//                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//                         </div>
+//                     <form method="POST" id="formInputs">    
+//                         <div class="modal-body">
+//                             <!-- <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">ID</span>
+//                                 <input type="text" id="id" name="id" class="form-control" aria-label="id" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br> -->
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Name</span>
+//                                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Last Name</span>
+//                                 <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter your last name" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Email</span>
+//                                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group mb-3">
+//                                 <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+//                                 <select class="form-select" id="gender" name="gender" id="inputGroupSelect01">
+//                                     <option selected>What gender do you identify with?</option>
+//                                     <option value="Man">Man</option>
+//                                     <option value="Woman">Woman</option>
+//                                     <option value="Another">Another</option>
+//                                 </select>
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">City</span>
+//                                 <input type="text" id="city" name="city" class="form-control" placeholder="What city are you from?" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Street Address</span>
+//                                 <input type="text" id="streetAddress " name="streetAddress" class="form-control" placeholder="Enter your email" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">State</span>
+//                                 <input type="text" name="state" class="form-control" placeholder="Enter your state" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Age</span>
+//                                 <input type="text" name="age"  class="form-control" placeholder="How old are you?" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Postal Code</span>
+//                                 <input type="text" name="postalCode" class="form-control" placeholder="Enter your postal code" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                             <br>
+//                             <div class="input-group flex-nowrap">
+//                                 <span class="input-group-text" id="addon-wrapping">Phone Number</span>
+//                                 <input type="text" name="phoneNumber" class="form-control" placeholder="Enter your phone number" aria-label="Username" aria-describedby="addon-wrapping">
+//                             </div>
+//                         </div>
+//                         <div class="modal-footer">
+//                             <button type="button" class="btn btn-danger p-2" data-bs-dismiss="modal"><i class="bi bi-x-circle p-1"></i>Close</button>
+//                             <button type="submit" name="submit" class="btn btn-primary p-2"><i class="bi bi-box-arrow-down p-1"></i>Save employee</button>
+//                         </div>
+//                     </form>    
+//                     </div>
+//                 </div>
+//             </div>
+//             `

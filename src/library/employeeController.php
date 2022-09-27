@@ -25,7 +25,23 @@ if(isset($_GET["action"]) && $_GET["action"] === "listEmployees"){
     $employeeId = $_GET['id'];
     deleteEmployee($employeeId);
 
-}   
-    
+    } else if  (isset($_GET['id'])) {
+        $getID = $_GET['id'];
+        $updateEmployee = array(
+            "id"            =>  $getId,            
+            "name"          => $_POST['name'],
+            "lastName"      => $_POST['lastName'],
+            "email"         => $_POST['email'],
+            "gender"        => $_POST['gender'],
+            "city"          => $_POST['city'],
+            "streetAddress" => $_POST['streetAddress'],
+            "state"         => $_POST['state'],
+            "age"           => $_POST['age'],
+            "postalCode"    => $_POST['postalCode'],
+            "phoneNumber"   => $_POST['phoneNumber'],
+
+        );
+    updateEmployee($updateEmployee);
+    }
 
 ?>

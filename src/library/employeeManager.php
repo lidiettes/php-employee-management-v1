@@ -52,16 +52,36 @@ function deleteEmployee(string $id){
 
 
 
-function updateEmployee(array $updateEmployee)
-{
-// TODO implement it
+function updateEmployee(array $updateEmployee){
+	$employeData = json_decode(file_get_contents('../../resources/employees.json'), true);
+
+    for ($i = 0; $i < count($employeData); $i++){
+        if ($employeData[$i]['id'] == $updateEmployee['id']) {
+            $employeData[$i] = $updateEmployee;
+           
+        }
+    }
+	file_put_contents("../../resources/employees.json",json_encode($employeData));
+	header("Location: ../dashboard.php");
 }
 
 
-function getEmployee(string $id)
-{
-// TODO implement it
-}
+function getEmployee(string $id){
+
+	$employeData  = json_decode(file_get_contents('../resources/employees.json'), true);
+	
+		foreach($employeData as $employeDataObj){
+			/
+			if($employeDataObj['id'] == $id){
+				
+				return $employeDataObj;
+			}
+		}
+		return null;
+	
+	}
+
+
 
 
 function removeAvatar($id)
